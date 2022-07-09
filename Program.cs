@@ -41,7 +41,7 @@ namespace MYCOMPILER
                 else
                 {
                     Evaluator e = new Evaluator(syntaxTree.Root);
-                    int res = e.Evaluate();
+                    var res = e.Evaluate();
                     Console.WriteLine($"the result : {res}");
                 }
             }

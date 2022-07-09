@@ -7,16 +7,16 @@ namespace myCompiler.CodeAnalysis
         {
             this._root = root;
         }
-        public int Evaluate()
+        public double Evaluate()
         {
             return EvaluateExpression(_root);
         }
-        private int EvaluateExpression(ExpressionSyntax node)
+        private double EvaluateExpression(ExpressionSyntax node)
         {
 
             if (node is NumberExpressionSyntax n)
             {
-                return (int)n.NumberToken.Value;
+                return (double)n.NumberToken.Value;
             }
             if (node is BinaryExpressionSyntax b)
             {
@@ -45,7 +45,7 @@ namespace myCompiler.CodeAnalysis
                 }
                 else if (b.OperatorToken.Kind == SyntaxKind.PowerToken)
                 {
-                    return (int)Math.Pow(left, right);
+                    return (double)Math.Pow(left, right);
                 }
                 else
                 {

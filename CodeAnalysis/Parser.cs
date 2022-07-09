@@ -73,9 +73,20 @@ namespace myCompiler.CodeAnalysis
         }
         public ExpressionSyntax parseFactor()
         {
-            ExpressionSyntax left = ParsePrimaryExpression();
+            ExpressionSyntax left = parsePower();
             while (Current.Kind == SyntaxKind.MultiToken || Current.Kind == SyntaxKind.DivideToken ||
-                Current.Kind == SyntaxKind.PowerToken || Current.Kind == SyntaxKind.ModToken)
+            Current.Kind == SyntaxKind.ModToken)
+            {
+                SyntaxToken OperatorToken = NextToken();
+                ExpressionSyntax right = parsePower();
+                left = new BinaryExpressionSyntax(left, OperatorToken, right);
+            }
+            return left;
+        }
+        public ExpressionSyntax parsePower()
+        {
+            ExpressionSyntax left = ParsePrimaryExpression();
+            while (Current.Kind == SyntaxKind.PowerToken)
             {
                 SyntaxToken OperatorToken = NextToken();
                 ExpressionSyntax right = ParsePrimaryExpression();
@@ -83,7 +94,6 @@ namespace myCompiler.CodeAnalysis
             }
             return left;
         }
-
         private ExpressionSyntax ParsePrimaryExpression()
         {
             if (Current.Kind == SyntaxKind.OpenPranToken)

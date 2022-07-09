@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\myCompiler\\myCompiler.csproj": {}
+    "F:\\clone requests from github\\Basic-Calculator-Compiler\\myCompiler.csproj": {}
   },
   "projects": {
-    "F:\\myCompiler\\myCompiler.csproj": {
+    "F:\\clone requests from github\\Basic-Calculator-Compiler\\myCompiler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\myCompiler\\myCompiler.csproj",
+        "projectUniqueName": "F:\\clone requests from github\\Basic-Calculator-Compiler\\myCompiler.csproj",
         "projectName": "myCompiler",
-        "projectPath": "F:\\myCompiler\\myCompiler.csproj",
+        "projectPath": "F:\\clone requests from github\\Basic-Calculator-Compiler\\myCompiler.csproj",
         "packagesPath": "C:\\Users\\Alostaz\\.nuget\\packages\\",
-        "outputPath": "F:\\myCompiler\\obj\\",
+        "outputPath": "F:\\clone requests from github\\Basic-Calculator-Compiler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alostaz\\AppData\\Roaming\\NuGet\\NuGet.Config"

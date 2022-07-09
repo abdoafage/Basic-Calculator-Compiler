@@ -31,14 +31,14 @@ namespace myCompiler.CodeAnalysis
             if (char.IsDigit(Current))
             {
                 var start = _position;
-                while (char.IsDigit(Current))
+                while (char.IsDigit(Current) || Current=='.')
                 {
                     Next();
                 }
                 int len = _position - start;
                 string str = _text.Substring(start, len);
 
-                if (!int.TryParse(str, out var value))
+                if (!double.TryParse(str, out var value))
                 {
                     _diagonastics.Add($"ERROR: the number {str} isn't valid Int32.");
                 }

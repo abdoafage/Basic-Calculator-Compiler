@@ -2,7 +2,7 @@ namespace myCompiler.CodeAnalysis
 {
     class SyntaxToken : SyntaxNode
     {
-        public SyntaxToken(SyntaxKind kind, int position, string text, object value)
+        public SyntaxToken(SyntaxKind kind, int position, string text, double? value)
         {
             Kind = kind;
             Position = position;
@@ -12,7 +12,7 @@ namespace myCompiler.CodeAnalysis
         public override SyntaxKind Kind { get; }
         public int Position { get; }
         public string Text { get; }
-        public object Value { get; }
+        public double? Value { get; }
 
         public override IEnumerable<SyntaxNode> GetChildren()
         {
